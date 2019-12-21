@@ -1,0 +1,56 @@
+.sale-form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.form-container {
+	width: 70%;
+	margin-top: 2rem;
+	background-color: #ccc;
+	padding: 3rem;
+	border-radius: 5px;
+}
+
+.form-container button {
+	border-radius: 3px;
+	border: 1px solid var(--primaryColor);
+	background: #000;
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+	width: 200px;
+	padding: 12px 45px;
+	margin-top: 1.5rem;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+	cursor: pointer;
+}
+
+.header {
+	width: 100%;
+	background-color: brown;
+	height: 4rem;
+	display: flex;
+	justify-content: flex-end;
+	padding: 5px;
+	align-items: center;
+}
+
+.header button {
+	border-radius: 3px;
+	border: 1px solid var(--primaryColor);
+	background: var(--primaryColor);
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+	width: 200px;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+	cursor: pointer;
+}
