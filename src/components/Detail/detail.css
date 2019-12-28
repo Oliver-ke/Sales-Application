@@ -22,3 +22,9 @@ a {
 	border-radius: 3px;
 	width: 50%;
 }
+
+@media screen and (max-width: 800px) {
+	.detail {
+		width: 95%;
+	}
+}
