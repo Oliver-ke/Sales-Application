@@ -1,29 +1,22 @@
-.sale-form {
+.header {
 	width: 100%;
+	background-color: brown;
+	height: 4rem;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-end;
+	padding: 5px;
 	align-items: center;
 }
 
-.form-container {
-	width: 70%;
-	margin-top: 2rem;
-	background-color: #ccc;
-	padding: 3rem;
-	border-radius: 5px;
-}
-
-.form-container button {
+.header button {
 	border-radius: 3px;
 	border: 1px solid var(--primaryColor);
-	background: #000;
+	background: var(--primaryColor);
 	color: #fff;
 	font-size: 12px;
 	font-weight: bold;
 	width: 200px;
 	padding: 12px 45px;
-	margin-top: 1.5rem;
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;

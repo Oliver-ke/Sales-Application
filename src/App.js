@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import SignIn from './components/signin/SignIn';
 import Sales from './components/Sales/Sales';
+import Detail from './components/Detail/Detail';
+import withHeader from './components/Header/withHeader';
 import { auth, createUserProfileDocument } from './firebase/firebase';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
 
+const SalesWithHeader = withHeader(Sales);
+const DetailWithHeader = withHeader(Detail);
 function App() {
 	const [ currentUser, setCurrentUser ] = useState({});
 	const handleStateChange = async () => {
@@ -27,12 +31,12 @@ function App() {
 		const unSubscribe = handleStateChange();
 		return () => unSubscribe();
 	}, []);
-	console.log(currentUser);
 	return (
 		<Router>
 			<Switch>
 				<Route exact path="/" render={() => (currentUser ? <Redirect to="/sales" /> : <SignIn />)} />
-				<Route exact path="/sales" render={() => (!currentUser ? <Redirect to="/" /> : <Sales />)} />
+				<Route exact path="/sales" render={() => (!currentUser ? <Redirect to="/" /> : <SalesWithHeader />)} />
+				<Route exact path="/sales/:salesId" component={DetailWithHeader} />
 			</Switch>
 		</Router>
 	);

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { auth, createNewSales } from '../../firebase/firebase';
 import { Form, Button } from 'semantic-ui-react';
+import { useHistory } from 'react-router-dom';
 import './sales.css';
 
 const Sales = () => {
@@ -14,6 +15,7 @@ const Sales = () => {
 		driversName: '',
 		destinationAddress: '',
 	});
+	const history = useHistory();
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		return setInputs({ ...inputs, [name]: value });
@@ -22,9 +24,9 @@ const Sales = () => {
 		e.preventDefault();
 		setFormLoading(true);
 		try {
-			console.log(inputs);
-			await createNewSales(inputs);
+			const id = await createNewSales(inputs);
 			setFormLoading(false);
+			history.push(`/sales/${id}`);
 			setInputs({
 				name: '',
 				category: '',
@@ -34,7 +36,6 @@ const Sales = () => {
 				driversName: '',
 				destinationAddress: '',
 			});
-			await alert('Item Added Successfuly');
 		} catch (error) {
 			alert('Error Creating Sales');
 		}
@@ -42,9 +43,6 @@ const Sales = () => {
 	};
 	return (
 		<div className="sale-form">
-			<div className="header">
-				<button onClick={() => auth.signOut()}>Sign Out</button>
-			</div>
 			<h2>Sales Record Form</h2>
 			<div className="form-container">
 				<Form onSubmit={handleSubmit}>

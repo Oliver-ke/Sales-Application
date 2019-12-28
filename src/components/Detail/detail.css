@@ -1,0 +1,24 @@
+.detail-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 90vh;
+	width: 100vw;
+}
+
+h3 span {
+	color: #aaa;
+	font-size: inherit;
+}
+
+a {
+	margin-top: 10px;
+	font-size: 20px;
+}
+
+.detail {
+	background-color: #eee;
+	padding: 15px;
+	border-radius: 3px;
+	width: 50%;
+}
